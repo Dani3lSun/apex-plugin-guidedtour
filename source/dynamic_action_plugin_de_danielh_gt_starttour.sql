@@ -74,7 +74,7 @@ wwv_flow_api.create_plugin(
 '3) Shepherd (Start Tour) - This plugin is the last, and starts the guided tour from step to step. (use once per page)',
 'Original from: http://github.hubspot.com/shepherd/'))
 ,p_version_identifier=>'1.0'
-,p_about_url=>'http://blog.danielh.de/'
+,p_about_url=>'https://github.com/Dani3lSun/apex-plugin-guidedtour'
 ,p_files_version=>24
 );
 end;
