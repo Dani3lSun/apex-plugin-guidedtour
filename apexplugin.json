@@ -3,7 +3,7 @@
   "version" : "1.0",
   "description" : "It´s useful to guide your users through the application, or give your users a first run wizard to explain parts of your app.",
   "keywords" : ["guide", "tour", "shepherd", "firstrun"],
-  "homepage" : "https://github.com/Dani3lSun/apex-plugin-guidedtour"
+  "homepage" : "https://github.com/Dani3lSun/apex-plugin-guidedtour",
   "bugs" : {
     "url" : "https://github.com/Dani3lSun/apex-plugin-guidedtour/issues",
     "email" : "daniel@danielh.de"
@@ -12,7 +12,7 @@
   "author" : {
     "name" : "Daniel Hochleitner",
     "email" : "daniel@danielh.de",
-    "url" : "http://blog.danielh.de/",
+    "url" : "http://blog.danielh.de/"
   },
   "repository" : {
     "type" : "git",
