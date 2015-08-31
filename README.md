@@ -45,7 +45,18 @@ This true action can be used multiple times. The order/sequences of the true act
 ####GuidedTour (Start Tour):
 This true action starts the tour with all steps from before. Put it at the end of all true actions.
 
+###On button click
+- Do all steps as it is described above except using "GuidedTour (Start Tour)" plugin. ("New Instance" and "Add Step" only)
+- new DA on button click - type execute Javascript (on page load false)
+
+JS Code:
+```language-javascript
+tour.start();
+```
+
 ##Demo Application
 https://apex.oracle.com/pls/apex/f?p=57743:1
 
+##Preview
+![](https://github.com/Dani3lSun/apex-plugin-guidedtour/blob/master/preview.png)
 ---
