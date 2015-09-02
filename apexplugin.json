@@ -28,7 +28,7 @@
         "internal-name" : "DE.DANIELH.GT.NEWINSTANCE",
         "type" : "dynamic action",
         "demo" : "https://apex.oracle.com/pls/apex/f?p=57743:1",
-        "preview-img" : "https://github.com/Dani3lSun/apex-plugin-guidedtour/blob/master/preview.png"
+        "preview-image" : "https://raw.githubusercontent.com/Dani3lSun/apex-plugin-guidedtour/master/preview.png"
       }
     }
   }
