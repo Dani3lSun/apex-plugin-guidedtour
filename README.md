@@ -1,4 +1,4 @@
-#Oracle Apex DynamicAction Plugin - GuidedTour
+#Oracle APEX DynamicAction Plugin - GuidedTour
 Dynamic Action Plugin using OpenSource JS framework "Stepherd".
 It´s useful to guide your users through the application, or give your users a first run wizard to explain parts of your app.
 (https://github.com/HubSpot/shepherd)
