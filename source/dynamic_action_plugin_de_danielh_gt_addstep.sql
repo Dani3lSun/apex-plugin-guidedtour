@@ -13,7 +13,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.1.00.06'
+,p_release=>'5.0.3.00.03'
 ,p_default_workspace_id=>96713923238010156
 ,p_default_application_id=>57743
 ,p_default_owner=>'DHTEST'
@@ -81,7 +81,7 @@ wwv_flow_api.create_plugin(
 '  l_result.attribute_04        := l_attach_to_class;',
 '  l_result.attribute_05        := l_btn_close_text;',
 '  l_result.attribute_06        := l_btn_next_text;',
-'  l_result.attribute_06        := l_position;',
+'  l_result.attribute_07        := l_position;',
 '  --',
 '  RETURN l_result;',
 '  --',
