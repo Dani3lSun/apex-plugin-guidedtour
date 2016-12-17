@@ -55,7 +55,7 @@ tour.start();
 ```
 
 ## Demo Application
-https://apex.oracle.com/pls/apex/f?p=57743:1
+https://apex.oracle.com/pls/apex/f?p=APEXPLUGIN
 
 ## Preview
 ![](https://github.com/Dani3lSun/apex-plugin-guidedtour/blob/master/preview.png)
