@@ -16,6 +16,9 @@ So the plugins are exactly for this events:
 
 
 ## Changelog
+
+#### 1.0.1 - Added HTML escaping to Text inputs of Add Step Plugin
+
 #### 1.0 - Initial Release
 
 ## Install

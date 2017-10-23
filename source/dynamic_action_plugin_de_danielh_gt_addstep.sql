@@ -13,10 +13,10 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.3.00.03'
-,p_default_workspace_id=>96713923238010156
-,p_default_application_id=>57743
-,p_default_owner=>'DHTEST'
+,p_release=>'5.0.4.00.12'
+,p_default_workspace_id=>42937890966776491
+,p_default_application_id=>600
+,p_default_owner=>'APEX_PLUGIN'
 );
 end;
 /
@@ -28,19 +28,19 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/de_danielh_gt_addstep
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086497523853280640)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'DE.DANIELH.GT.ADDSTEP'
 ,p_display_name=>'GuidedTour (Add Step)'
 ,p_category=>'INIT'
 ,p_supported_ui_types=>'DESKTOP'
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'  /*-------------------------------------',
-'   * GuidedTour Functions',
-'   * Version: 1.0 (03.08.2015)',
-'   * Author:  Daniel Hochleitner',
-'   *-------------------------------------',
-'  */',
+'/*-------------------------------------',
+' * GuidedTour Functions',
+' * Version: 1.0.1 (24.10.2017)',
+' * Author:  Daniel Hochleitner',
+' *-------------------------------------',
+'*/',
 'FUNCTION render_shepherdaddstep(p_dynamic_action IN apex_plugin.t_dynamic_action,',
 '                                p_plugin         IN apex_plugin.t_plugin)',
 '  RETURN apex_plugin.t_dynamic_action_render_result IS',
@@ -61,6 +61,12 @@ wwv_flow_api.create_plugin(
 '    apex_plugin_util.debug_dynamic_action(p_plugin         => p_plugin,',
 '                                          p_dynamic_action => p_dynamic_action);',
 '  END IF;',
+'  -- Escaping',
+'  l_step_name      := apex_escape.html(l_step_name);',
+'  l_step_title     := apex_escape.html(l_step_title);',
+'  l_step_text      := apex_escape.html(l_step_text);',
+'  l_btn_close_text := apex_escape.html(l_btn_close_text);',
+'  l_btn_next_text  := apex_escape.html(l_btn_next_text);',
 '  -- Add JS Code to Start new Stepherd Instance',
 '  apex_javascript.add_inline_code(p_code => ''tour.addStep("'' || l_step_name ||',
 '                                            ''", {title: "'' || l_step_title ||',
@@ -97,13 +103,13 @@ wwv_flow_api.create_plugin(
 '2) Shepherd (Add Step) - This Plugin adds one Step of the tour. Here you can choose title, text und position of the popup. Attached to an element css class. (can be used multiple times per page)',
 '3) Shepherd (Start Tour) - This plugin is the last, and starts the guided tour from step to step. (use once per page)',
 'Original from: http://github.hubspot.com/shepherd/'))
-,p_version_identifier=>'1.0'
+,p_version_identifier=>'1.0.1'
 ,p_about_url=>'https://github.com/Dani3lSun/apex-plugin-guidedtour'
 ,p_files_version=>24
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043558298847482914)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086497759735280644)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -115,8 +121,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Give the step an name. this value would not be displayed.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043558612353482915)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086498073241280645)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -128,8 +134,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Visible title of the step.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043559090953482916)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086498551841280646)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -140,8 +146,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Visible Text of the step.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043559462182482916)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086498923070280646)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -156,8 +162,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'css class the "popup" would be attached to.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043559873116482916)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086499334004280646)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
@@ -169,8 +175,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Text/Label of the close button.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043560206121482917)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086499667009280647)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
@@ -184,8 +190,8 @@ wwv_flow_api.create_plugin_attribute(
 'For last step, the label could be "done" instead of "next."'))
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043560694311482917)
-,p_plugin_id=>wwv_flow_api.id(11043558062965482910)
+ p_id=>wwv_flow_api.id(11086500155199280647)
+,p_plugin_id=>wwv_flow_api.id(11086497523853280640)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
@@ -198,29 +204,29 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Position of the popup. Choose between top/bottom/left/right.'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043561063358482917)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043560694311482917)
+ p_id=>wwv_flow_api.id(11086500524246280647)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086500155199280647)
 ,p_display_sequence=>10
 ,p_display_value=>'Bottom'
 ,p_return_value=>'bottom'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043561542015482919)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043560694311482917)
+ p_id=>wwv_flow_api.id(11086501002903280649)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086500155199280647)
 ,p_display_sequence=>20
 ,p_display_value=>'Top'
 ,p_return_value=>'top'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043562081652482919)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043560694311482917)
+ p_id=>wwv_flow_api.id(11086501542540280649)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086500155199280647)
 ,p_display_sequence=>30
 ,p_display_value=>'Left'
 ,p_return_value=>'left'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043562571611482920)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043560694311482917)
+ p_id=>wwv_flow_api.id(11086502032499280650)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086500155199280647)
 ,p_display_sequence=>40
 ,p_display_value=>'Right'
 ,p_return_value=>'right'

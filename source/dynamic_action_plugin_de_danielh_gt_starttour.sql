@@ -13,10 +13,10 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.1.00.06'
-,p_default_workspace_id=>96713923238010156
-,p_default_application_id=>57743
-,p_default_owner=>'DHTEST'
+,p_release=>'5.0.4.00.12'
+,p_default_workspace_id=>42937890966776491
+,p_default_application_id=>600
+,p_default_owner=>'APEX_PLUGIN'
 );
 end;
 /
@@ -28,7 +28,7 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/de_danielh_gt_starttour
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(11043573231703486949)
+ p_id=>wwv_flow_api.id(11086512692591284679)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'DE.DANIELH.GT.STARTTOUR'
 ,p_display_name=>'GuidedTour (Start Tour)'
@@ -37,7 +37,7 @@ wwv_flow_api.create_plugin(
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '  /*-------------------------------------',
 '   * GuidedTour Functions',
-'   * Version: 1.0 (03.08.2015)',
+'   * Version: 1.0.1 (24.10.2017)',
 '   * Author:  Daniel Hochleitner',
 '   *-------------------------------------',
 '  */',
@@ -73,7 +73,7 @@ wwv_flow_api.create_plugin(
 '2) Shepherd (Add Step) - This Plugin adds one Step of the tour. Here you can choose title, text und position of the popup. Attached to an element css class. (can be used multiple times per page)',
 '3) Shepherd (Start Tour) - This plugin is the last, and starts the guided tour from step to step. (use once per page)',
 'Original from: http://github.hubspot.com/shepherd/'))
-,p_version_identifier=>'1.0'
+,p_version_identifier=>'1.0.1'
 ,p_about_url=>'https://github.com/Dani3lSun/apex-plugin-guidedtour'
 ,p_files_version=>24
 );

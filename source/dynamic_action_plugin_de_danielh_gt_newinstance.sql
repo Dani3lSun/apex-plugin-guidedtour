@@ -13,10 +13,10 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.1.00.06'
-,p_default_workspace_id=>96713923238010156
-,p_default_application_id=>57743
-,p_default_owner=>'DHTEST'
+,p_release=>'5.0.4.00.12'
+,p_default_workspace_id=>42937890966776491
+,p_default_application_id=>600
+,p_default_owner=>'APEX_PLUGIN'
 );
 end;
 /
@@ -28,7 +28,7 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/de_danielh_gt_newinstance
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086504065459280661)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'DE.DANIELH.GT.NEWINSTANCE'
 ,p_display_name=>'GuidedTour (New Instance)'
@@ -37,7 +37,7 @@ wwv_flow_api.create_plugin(
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '  /*-------------------------------------',
 '   * GuidedTour Functions',
-'   * Version: 1.0 (03.08.2015)',
+'   * Version: 1.0.1 (24.10.2017)',
 '   * Author:  Daniel Hochleitner',
 '   *-------------------------------------',
 '  */',
@@ -103,13 +103,13 @@ wwv_flow_api.create_plugin(
 '2) Shepherd (Add Step) - This Plugin adds one Step of the tour. Here you can choose title, text und position of the popup. Attached to an element css class. (can be used multiple times per page)',
 '3) Shepherd (Start Tour) - This plugin is the last, and starts the guided tour from step to step. (use once per page)',
 'Original from: http://github.hubspot.com/shepherd/'))
-,p_version_identifier=>'1.0'
+,p_version_identifier=>'1.0.1'
 ,p_about_url=>'https://github.com/Dani3lSun/apex-plugin-guidedtour'
 ,p_files_version=>21
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(11043564961179482931)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086504422067280661)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -122,36 +122,36 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Choose the default theme for the stepherd on one page.'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043566856574482933)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043564961179482931)
+ p_id=>wwv_flow_api.id(11086506317462280663)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086504422067280661)
 ,p_display_sequence=>10
 ,p_display_value=>'shepherd-theme-default'
 ,p_return_value=>'shepherd-theme-default'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043565360558482932)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043564961179482931)
+ p_id=>wwv_flow_api.id(11086504821446280662)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086504422067280661)
 ,p_display_sequence=>20
 ,p_display_value=>'shepherd-theme-dark'
 ,p_return_value=>'shepherd-theme-dark'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043565889768482932)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043564961179482931)
+ p_id=>wwv_flow_api.id(11086505350656280662)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086504422067280661)
 ,p_display_sequence=>30
 ,p_display_value=>'shepherd-theme-square'
 ,p_return_value=>'shepherd-theme-square'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043566301889482933)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043564961179482931)
+ p_id=>wwv_flow_api.id(11086505762777280663)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086504422067280661)
 ,p_display_sequence=>40
 ,p_display_value=>'shepherd-theme-square-dark'
 ,p_return_value=>'shepherd-theme-square-dark'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(11043567313239482934)
-,p_plugin_attribute_id=>wwv_flow_api.id(11043564961179482931)
+ p_id=>wwv_flow_api.id(11086506774127280664)
+,p_plugin_attribute_id=>wwv_flow_api.id(11086504422067280661)
 ,p_display_sequence=>40
 ,p_display_value=>'shepherd-theme-square-dark'
 ,p_return_value=>'shepherd-theme-square-dark'
@@ -267,8 +267,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043568270594482935)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086507731482280665)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'shepherd-theme-dark.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -387,8 +387,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043568688385482937)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086508149273280667)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'shepherd-theme-default.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -509,8 +509,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043569051992482938)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086508512880280668)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'shepherd-theme-square-dark.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -628,8 +628,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043569464468482938)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086508925356280668)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'shepherd-theme-square.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -739,8 +739,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043569841798482939)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086509302686280669)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'shepherd.min.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -758,8 +758,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043570263583482940)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086509724471280670)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'tether.min.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -1006,8 +1006,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(11043570694948482940)
-,p_plugin_id=>wwv_flow_api.id(11043564604571482931)
+ p_id=>wwv_flow_api.id(11086510155836280670)
+,p_plugin_id=>wwv_flow_api.id(11086504065459280661)
 ,p_file_name=>'tether.min.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'

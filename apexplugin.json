@@ -1,6 +1,6 @@
 {
   "name" : "GuidedTour",
-  "version" : "1.0",
+  "version" : "1.0.1",
   "description" : "It´s useful to guide your users through the application, or give your users a first run wizard to explain parts of your app.",
   "keywords" : ["guide", "tour", "shepherd", "firstrun"],
   "homepage" : "https://github.com/Dani3lSun/apex-plugin-guidedtour",
